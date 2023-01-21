@@ -1,2 +1,7 @@
-# N_Salauddin_WEB601Assignments_MyFavouriteBooks
+# WEB601 Angular Assignments
+
+## Done by : Nausheen Salauddin
+
+
+## Theme : My Favourite Books
  
