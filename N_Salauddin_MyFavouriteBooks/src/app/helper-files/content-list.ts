@@ -3,7 +3,7 @@ import {Content} from "./content-interface";
 export class ContentList {
     private contentList: Content[];
 
-    constructor(contentList: Content[]) {    
+    constructor() {    
         this.contentList = []; // initialize array    
     }
 
@@ -24,7 +24,7 @@ export class ContentList {
         return `<h2>${contentIndex.title}</h2>
                 <p>${contentIndex.description}</p>
                 <p>By: ${contentIndex.creator}</p>
-                <img src=${contentIndex.imgURL}>
+                ${contentIndex.imgURL? `<img src="${contentIndex.imgURL}" alt="${contentIndex.title}" />`: ""}
                 <p>Type: ${contentIndex.type}</p>`;
     }
     
