@@ -1,4 +1,4 @@
-import 'zone.js'; //to open stackblitz
+import 'zone.js/dist/zone'; //to open stackblitz
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
