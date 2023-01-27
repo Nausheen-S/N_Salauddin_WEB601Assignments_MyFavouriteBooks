@@ -21,11 +21,17 @@ export class ContentList {
 
     getContent(index: number): string {
         const contentIndex = this.contentList[index];
-        return `<h2>${contentIndex.title}</h2>
-                <p>${contentIndex.description}</p>
-                <p>By: ${contentIndex.creator}</p>
-                ${contentIndex.imgURL? `<img src="${contentIndex.imgURL}" alt="${contentIndex.title}" />`: ""}
-                <p>Type: ${contentIndex.type}</p>`;
+        const arrLength = this.getLength();
+        if(+contentIndex > arrLength) {
+            return `<h2>Value does not exist</h2>`
+        }
+        else {
+            return `<h2>${contentIndex.title}</h2>
+            <p>${contentIndex.description}</p>
+            <p>By: ${contentIndex.creator}</p>
+            ${contentIndex.imgURL? `<img src="${contentIndex.imgURL}" alt="${contentIndex.title}" />`: ""}
+            <p>Type: ${contentIndex.type}</p>`;
+        }
     }
     
 }
