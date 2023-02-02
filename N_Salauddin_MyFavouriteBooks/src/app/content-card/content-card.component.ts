@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {Content} from '../helper-files/content-interface';
 
 @Component({
@@ -8,5 +8,5 @@ import {Content} from '../helper-files/content-interface';
 })
 
 export class ContentCardComponent  {
-  
+  @Input()item;
 }

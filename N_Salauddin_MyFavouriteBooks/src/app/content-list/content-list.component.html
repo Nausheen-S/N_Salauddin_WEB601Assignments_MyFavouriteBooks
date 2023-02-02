@@ -1,1 +1,4 @@
-<p>content-list works!</p>
+<ng-container *ngFor="let item of contentItems; first as isFirst">
+        
+        <app-content-card [item]="item"></app-content-card>
+</ng-container>
