@@ -1,13 +1,12 @@
 <div class="content-card">
-    <div class="content-card-image" >
+    <div class="content-card-image content-card-item" >
         <img src="{{item.image}}" (click)="log()"  alt="{{item.title}}"/>
-        <!-- <app-content-card [item]="item" (click)="Console.log(item.id + ' ' + item.title)"> (click)="console.log(item.id + ' ' + item.title)"-->
     </div>
     <div class="content-card-content">
-        <h2>{{item.title}}</h2>
-        <p>{{item.description}}</p>
-        <p>Creator: {{item.creator}}</p>
-        <p>Type: {{item.type}}</p>
-        <p>Tags: {{item.tags.join(', ')}}</p>
+        <h2 class="content-card-item">{{item.title}}</h2>
+        <p class="content-card-item">{{item.description}}</p>
+        <p class="content-card-item">Creator: {{item.creator}}</p>
+        <p class="content-card-item">Type: {{item.type}}</p>
+        <p class="content-card-item">Tags: {{item.tags.join(', ')}}</p>
     </div>
 </div>

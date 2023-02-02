@@ -1,5 +1,5 @@
-<ng-container *ngFor="let item of contentItems; first as isFirst; index as i">
-        <div *ngIf="i<5">
+<div *ngFor="let item of contentItems; first as isFirst; index as i">
+        <div *ngIf="i<5" [ngStyle]="{border: isFirst ? '2px solid black' : ''}">
                 <app-content-card [item]="item"></app-content-card>
         </div>
-</ng-container>
+</div>
