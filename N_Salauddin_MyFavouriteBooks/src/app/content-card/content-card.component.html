@@ -1,8 +1,6 @@
-
-
 <div class="content-card">
     <div class="content-card-image" >
-        <img src="{{item.image}}"  alt="{{item.title}}"/>
+        <img src="{{item.image}}" (click)="log()"  alt="{{item.title}}"/>
         <!-- <app-content-card [item]="item" (click)="Console.log(item.id + ' ' + item.title)"> (click)="console.log(item.id + ' ' + item.title)"-->
     </div>
     <div class="content-card-content">

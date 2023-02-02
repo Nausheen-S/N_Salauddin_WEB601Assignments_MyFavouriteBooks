@@ -9,4 +9,9 @@ import {Content} from '../helper-files/content-interface';
 
 export class ContentCardComponent  {
   @Input()item;
+
+  log(){
+    console.log("ID: " + this.item.id);
+    console.log("Title: " + this.item.title);
+  }
 }
