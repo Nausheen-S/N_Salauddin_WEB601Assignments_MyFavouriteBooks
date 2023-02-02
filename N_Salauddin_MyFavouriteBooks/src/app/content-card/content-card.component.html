@@ -1,5 +1,15 @@
 
 
-<div *ngFor="let item of contentList.content; index as i">
-    <div class="innerdiv" [innerHTML]="contentList.getContent(i)"></div>
+<div class="content-card">
+    <div class="content-card-image" >
+        <img src="{{item.image}}"  alt="{{item.title}}"/>
+        <!-- <app-content-card [item]="item" (click)="Console.log(item.id + ' ' + item.title)"> (click)="console.log(item.id + ' ' + item.title)"-->
+    </div>
+    <div class="content-card-content">
+        <h2>{{item.title}}</h2>
+        <p>{{item.description}}</p>
+        <p>Creator: {{item.creator}}</p>
+        <p>Type: {{item.type}}</p>
+        <p>Tags: {{item.tags.join(', ')}}</p>
+    </div>
 </div>
