@@ -1,7 +1,7 @@
 <div>
         <input type="text" placeholder="Search Title..." name="search" [(ngModel)]="searchText">
         <button (click)="onSearch()">Search</button>
-        <p [ngClass]="{'error': !searchText.endsWith('exists'), 'success': searchText.endsWith('exists')}">{{message}}</p>
+        <p [ngClass]="{'error': !message.includes('Content with this title exists'), 'success': message.endsWith('exists')}">{{message}}</p>
         <h2>Content with no type</h2>
         <app-content-card *ngFor="let item of contentItems | filterContent:''" [item]="item"></app-content-card>
         <h2>Content with type: HardBound</h2>
