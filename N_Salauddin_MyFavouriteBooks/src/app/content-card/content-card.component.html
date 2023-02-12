@@ -1,8 +1,8 @@
-<div class="content-card" [style.border]="item.type ? '2px solid ' + item.type : '1px solid black'">
+<div [ngClass]="{ 'type1-style': item.type === 'HardBound', 'type2-style': item.type === 'SoftBound' }" class="content-card-content" class="content-card" [style.border]="item.type ? '2px solid ' + item.type : '1px solid black'">
     <div class="content-card-image content-card-item" >
         <img src="{{item.image}}" (click)="log()"  alt="{{item.title}}"/>
     </div>
-    <div class="content-card-content">
+    <div>
         <h2 class="content-card-item">{{item.title}}</h2>
         <p class="content-card-item">{{item.description}}</p>
         <p class="content-card-item">Creator: {{item.creator}}</p>
