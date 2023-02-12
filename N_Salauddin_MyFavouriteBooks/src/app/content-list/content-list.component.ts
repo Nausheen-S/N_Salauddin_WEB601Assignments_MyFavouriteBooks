@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -70,4 +71,19 @@ export class ContentListComponent {
       tags: ["tag11", "tag12"]
     }
   ];
+
+  searchText : string = "";
+  message: string = "";
+
+  onSearch() {
+    const result = this.contentItems.find(content => content.title === this.searchText);
+    console.log(result);
+    if(result) {
+      this.message = "Content with this title exists";
+    }
+    else{
+      this.message = "Content with this title does not exist";
+    }
+  }
+  
 }
