@@ -1,4 +1,4 @@
-<div class="content-card">
+<div class="content-card" [style.border]="item.type ? '2px solid ' + item.type : '1px solid black'">
     <div class="content-card-image content-card-item" >
         <img src="{{item.image}}" (click)="log()"  alt="{{item.title}}"/>
     </div>
@@ -6,7 +6,7 @@
         <h2 class="content-card-item">{{item.title}}</h2>
         <p class="content-card-item">{{item.description}}</p>
         <p class="content-card-item">Creator: {{item.creator}}</p>
-        <p class="content-card-item">Type: {{item.type}}</p>
+        <p *ngIf="item.type" class="content-card-item">Type: {{item.type}}</p>
         <p class="content-card-item">Tags: {{item.tags.join(', ')}}</p>
     </div>
 </div>

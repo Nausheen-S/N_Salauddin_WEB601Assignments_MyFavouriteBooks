@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-list',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
-  contentItems = [
+  contentItems:Content[] = [
     {
       id: 1,
       image: "../../assets/images/WebDevLogo.png",

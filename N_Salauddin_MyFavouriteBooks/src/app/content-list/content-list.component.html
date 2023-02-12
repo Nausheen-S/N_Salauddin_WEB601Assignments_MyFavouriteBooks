@@ -1,5 +1,13 @@
-<div *ngFor="let item of contentItems; first as isFirst; index as i">
-        <div *ngIf="i<5" [ngStyle]="{border: isFirst ? '2px solid black' : ''}">
-                <app-content-card [item]="item"></app-content-card>
-        </div>
+<div>
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+        <!-- <div *ngIf="message">{{message}}</div> -->
+        <h2>Content with no type</h2>
+        <app-content-card *ngFor="let item of contentItems | filterContent:''" [item]="item"></app-content-card>
+        <h2>Content with type: HardBound</h2>
+        <app-content-card *ngFor="let item of contentItems | filterContent:'HardBound'" [item]="item">
+        </app-content-card>
+        <h2>Content with type: SoftBound</h2>
+        <app-content-card *ngFor="let item of contentItems | filterContent:'SoftBound'" [item]="item">
+        </app-content-card>
 </div>
