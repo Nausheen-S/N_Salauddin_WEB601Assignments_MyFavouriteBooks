@@ -3,11 +3,14 @@ import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 @Directive({
   selector: '[appHoverAffect]'
 })
+
 export class HoverAffectDirective {
   @Input() hoverStyle!: string;
 
   @HostBinding('style.text-decoration') textDecoration!: string;
   @HostBinding('style.font-weight') fontWeight!: string; //non-null assertion operator => initialized later
+
+  constructor() {}
 
   @HostListener('mouseenter') onMouseEnter() {
     this.applyStyle();
@@ -22,6 +25,7 @@ export class HoverAffectDirective {
       this.textDecoration = 'underline';
     } else if (this.hoverStyle === 'bold') {
       this.fontWeight = 'bold';
+
     }
   }
 
