@@ -11,7 +11,7 @@ export class ContentListComponent {
   contentItems:Content[] = [
     {
       id: 1,
-      image: "../../assets/images/WebDevLogo.png",
+      image: "",
       title: "book 1",
       description: "Description of book 1",
       creator: "Creator 1",
@@ -64,7 +64,7 @@ export class ContentListComponent {
     },
     {
       id: 7,
-      image: "../../assets/images/WebDevLogo.png",
+      image: "",
       title: "book 7",
       description: "Description of book 7",
       creator: "Creator 7",
