@@ -1,9 +1,32 @@
-<input type="number" [(ngModel)]="newContent.id" placeholder="ID">
-<input type="text" [(ngModel)]="newContent.title" placeholder="Title">
-<textarea [(ngModel)]="newContent.description" placeholder="Description"></textarea>
-<input type="text" [(ngModel)]="newContent.creator" placeholder="Creator">
-<input type="text" [(ngModel)]="newContent.image" placeholder="Image">
-<input type="text" [(ngModel)]="newContent.type" placeholder="Type">
-<input type="text" [(ngModel)]="newContent.tags" placeholder="Tags">
-<button (click)="onSubmit()">Submit</button>
-
+<form>
+    <div class="form-group">
+        <label for="id">ID:</label>
+        <input type="number" class="form-control" id="id" required [(ngModel)]="newContent.id" name="id">
+    </div>
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" required [(ngModel)]="newContent.title" name="title">
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" required [(ngModel)]="newContent.description"
+            name="description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="creator">Creator:</label>
+        <input type="text" class="form-control" id="creator" required [(ngModel)]="newContent.creator" name="creator">
+    </div>
+    <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="text" class="form-control" id="image" [(ngModel)]="newContent.image" name="image">
+    </div>
+    <div class="form-group">
+        <label for="type">Type:</label>
+        <input type="text" class="form-control" id="type" [(ngModel)]="newContent.type" name="type">
+    </div>
+    <div class="form-group">
+        <label for="tags">Tags:</label>
+        <input type="text" class="form-control" id="tags" [(ngModel)]="newContent.tags" name="tags">
+    </div>
+    <button (click)="onSubmit()" type="submit" class="btn">Submit</button>
+</form>
