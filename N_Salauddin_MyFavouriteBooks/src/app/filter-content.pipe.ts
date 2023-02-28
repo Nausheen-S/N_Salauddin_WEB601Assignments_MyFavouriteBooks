@@ -6,11 +6,11 @@ import { Content } from './helper-files/content-interface';
 })
 export class FilterContentPipe implements PipeTransform {
 
-    transform(contents: Content[], type: string): Content[] {
-        if (!type) {
+    transform(contents: Content[], type?: string): Content[] {
+        if (!type || type.trim() === '') {
             return contents.filter(content => !content.type);
         }
         return contents.filter(content => content.type === type);
     }
-    lm
+    
 }

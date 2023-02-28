@@ -20,7 +20,6 @@ export class CreateContentComponent {
   @Output() addContent = new EventEmitter<Content>();
 
   onSubmit() {
-    // this.addContent.emit({...this.newContent, tags: this.newContent.tags.split(',').map(tag => tag.trim())});
     this.addContent.emit({...this.newContent});
     this.newContent = {
       id: 0,

@@ -8,6 +8,16 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
+  newContent: Content = {
+    id: 0,
+    title: '',
+    description: '',
+    creator: '',
+    image: '',
+    type: '',
+    tags: []
+  };
+  isError = false;
   contentItems:Content[] = [
     {
       id: 1,
@@ -84,6 +94,45 @@ export class ContentListComponent {
     else{
       this.message = "Content with this title does not exist";
     }
+  }
+
+  onAddContent(content: Content): Promise<void> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (content.id && content.title && content.description && content.creator) {
+          this.contentItems.push(content);
+          console.log(`Added content: ${content.title}`);
+          this.newContent = {
+            id: 0,
+            title: '',
+            description: '',
+            creator: '',
+            image: '',
+            type: '',
+            tags: []
+          };
+          this.isError = false;
+          // Success function
+          console.log(`Content added successfully: ${content.title}`);
+          resolve();
+        } else {
+          this.isError = true;
+          reject();
+        }
+      }, 2000);
+    });
+  }
+  
+  onNewContentAdded(content: Content) {
+    const clonedContents = JSON.parse(JSON.stringify(this.contentItems));
+    this.onAddContent(content).then(() => {
+      this.contentItems = clonedContents;
+      this.contentItems.push(content);
+      this.isError = false;
+    }).catch(() => {
+      console.log(`Failed to add content: ${content.title}`);
+      this.isError = true;
+    });
   }
   
 }

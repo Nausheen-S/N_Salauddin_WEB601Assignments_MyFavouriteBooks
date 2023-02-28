@@ -1,5 +1,5 @@
-<!-- <app-create-content (addContent)="onAddContent($event)"></app-create-content> -->
-<app-create-content></app-create-content>
+<app-create-content (addContent)="onNewContentAdded($event)"></app-create-content>
+<div style="color: red; font-weight: bold;" class="error-message" *ngIf="isError">Content failed to be added</div>
 <div>
         <input type="text" placeholder="Search Title..." name="search" [(ngModel)]="searchText">
         <button (click)="onSearch()">Search</button>

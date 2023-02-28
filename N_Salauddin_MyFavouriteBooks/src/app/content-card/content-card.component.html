@@ -8,6 +8,6 @@
         <p class="content-card-item">{{item.description}}</p>
         <p class="content-card-item">Creator: {{item.creator}}</p>
         <p appHoverAffect [hoverStyle]="'underline'" *ngIf="item.type" class="content-card-item">Type: {{item.type}}</p>
-        <p appHoverAffect [hoverStyle]="'bold'" class="content-card-item">Tags: {{item.tags.join(', ')}}</p>
+        <p appHoverAffect [hoverStyle]="'bold'" class="content-card-item">Tags: {{item.tags}}</p>
     </div>
 </div>
