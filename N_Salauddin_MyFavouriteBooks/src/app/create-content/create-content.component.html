@@ -1,0 +1,9 @@
+<input type="number" [(ngModel)]="newContent.id" placeholder="ID">
+<input type="text" [(ngModel)]="newContent.title" placeholder="Title">
+<textarea [(ngModel)]="newContent.description" placeholder="Description"></textarea>
+<input type="text" [(ngModel)]="newContent.creator" placeholder="Creator">
+<input type="text" [(ngModel)]="newContent.image" placeholder="Image">
+<input type="text" [(ngModel)]="newContent.type" placeholder="Type">
+<input type="text" [(ngModel)]="newContent.tags" placeholder="Tags">
+<button (click)="onSubmit()">Submit</button>
+
