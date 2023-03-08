@@ -9,19 +9,23 @@ import {Content} from '../helper-files/content-interface';
 
 export class ContentCardComponent  {
   @Input()item;
+  @Input() boxShadow!: boolean;
 
   isFirst: boolean = false;
   isLast: boolean = false;
-
-  @Input()content!: Content;
-
-  isTopContent(): boolean {
-    return this.content.id === 1;
-  }
   
+
+  @Input()contentItems!: Content;
 
   log(){
     console.log("ID: " + this.item.id);
     console.log("Title: " + this.item.title);
+  }
+  
+  get cardClasses() {
+    return {
+      'content-card': true,
+      'content-card-shadow': this.boxShadow
+    };
   }
 }

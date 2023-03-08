@@ -1,4 +1,4 @@
-<div>
+
         <input type="text" placeholder="Search Title..." name="search" [(ngModel)]="searchText">
         <button (click)="onSearch()">Search</button>
         <p [ngClass]="{'error': !message.includes('Content with this title exists'), 'success': message.endsWith('exists')}">{{message}}</p>
@@ -10,4 +10,3 @@
         <h2>Content with type: SoftBound</h2>
         <app-content-card *ngFor="let item of contentItems | filterContent:'SoftBound'" [item]="item">
         </app-content-card>
-</div>
