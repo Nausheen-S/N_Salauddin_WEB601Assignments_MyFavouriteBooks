@@ -9,20 +9,21 @@ import { BookService } from '../services/book.service';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-  content!: Content[];
+  contentItems: Content[]= [];
+  
   searchText : string = "";
   message: string = "";
-  contentItems: any;
+  
 
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
     this.bookService.getContent().subscribe(data => {
-      this.content = data;
-      this.addContentCard(1);
+      this.contentItems = data;
     });
+    
   }
-
+  
   onSearch() {
     const result = this.contentItems.find(content => content.title === this.searchText);
     console.log(result);
@@ -34,12 +35,5 @@ export class ContentListComponent implements OnInit {
     }
   }
 
-  addContentCard(id: number) {
-    this.bookService.getContentById(id).subscribe(data => {
-      if (data !== undefined) {
-        this.content.unshift(data);
-      }
-    });
-  }
   
 }
