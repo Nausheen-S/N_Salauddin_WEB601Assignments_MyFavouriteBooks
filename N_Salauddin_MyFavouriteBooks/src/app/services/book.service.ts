@@ -15,6 +15,6 @@ export class BookService {
   }
 
   getContentById(id: number): Observable<Content | undefined> {
-    return of(CONTENT.find(item => item.id === id));
+    return of(CONTENT.find(content => content.id === id));
   }
 }
