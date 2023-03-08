@@ -9,7 +9,7 @@ import { BookService } from '../services/book.service';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-  content: Content[] | undefined;
+  content!: Content[];
   searchText : string = "";
   message: string = "";
   contentItems: any;
