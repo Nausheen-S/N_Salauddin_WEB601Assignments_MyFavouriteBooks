@@ -13,6 +13,11 @@ export class ContentCardComponent  {
   isFirst: boolean = false;
   isLast: boolean = false;
 
+  @Input()content!: Content;
+
+  isTopContent(): boolean {
+    return this.content.id === 1;
+  }
   
 
   log(){
