@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Content } from './helper-files/content-interface';
+import { CONTENT } from './helper-files/contentDb';
+import { MessageService } from './message.service';
 import { BookService } from './services/book.service';
 
 @Component({
@@ -10,10 +12,11 @@ import { BookService } from './services/book.service';
 export class AppComponent implements OnInit {
   title = 'N_Salauddin_MyFavouriteBooks';
   contentItems: Content[] = [];
+  content!: Content;
   @Input() topContent: Content | undefined;
   id: number = 1;
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService,  private messagesService: MessageService) { }
 
   ngOnInit() {
     this.bookService.getContent().subscribe(data => {
@@ -21,6 +24,17 @@ export class AppComponent implements OnInit {
     });
     
   }
+
+  getContentById(): void {
+    if (isNaN(this.id) || this.id < 1 || this.id > CONTENT.length) {
+      this.messagesService.add('An error occurred.');
+      return;
+    }
+    this.bookService.getContentById(this.id).subscribe(content => {
+        this.content = content;
+    });
+  }
+
   addContentCard(id: number) {
     this.bookService.getContentById(id).subscribe(data => {
       if (data !== undefined) {
