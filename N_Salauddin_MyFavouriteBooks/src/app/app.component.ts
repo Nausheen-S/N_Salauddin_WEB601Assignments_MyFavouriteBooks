@@ -20,27 +20,31 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.bookService.getContent().subscribe(data => {
+      this.messagesService.add('Content array loaded!');
       this.contentItems = data;
     });
     
   }
 
-  getContentById(): void {
-    if (isNaN(this.id) || this.id < 1 || this.id > CONTENT.length) {
-      this.messagesService.add('An error occurred.');
+  showContentById() {
+    const id = +this.id;
+    if (isNaN(id) || id < 1 || id > CONTENT.length) {
+      this.messagesService.add('Invalid id entered!');
       return;
     }
-    this.bookService.getContentById(this.id).subscribe(content => {
-        this.content = content;
+    this.bookService.getContentById(id).subscribe(content => {
+      this.topContent = content;
+      this.messagesService.add(`Content Item at id: ${content.id}`);
     });
   }
 
-  addContentCard(id: number) {
-    this.bookService.getContentById(id).subscribe(data => {
-      if (data !== undefined) {
-        this.contentItems.unshift(data);
-        this.topContent = data;
-      }
-    });
-  }
+  // addContentCard(content: Content) {
+  //   this.bookService.getContentById(content.id).subscribe(content => {
+  //     if (content !== undefined) {
+  //       // this.contentItems.unshift(content);
+  //       this.topContent = content;
+  //       this.messagesService.add(`Content Item at id: ${content.id}`);
+  //     }
+  //   });
+  // }
 }
