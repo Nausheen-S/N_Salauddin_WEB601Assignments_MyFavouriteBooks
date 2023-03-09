@@ -9,6 +9,6 @@ import { MessageService } from '../message.service';
 export class AppMessagesComponent {
   messages: string[] = [];
 
-  constructor(private messageService: MessageService) { }
+  constructor(public messagesService: MessageService) { }
 
 }
