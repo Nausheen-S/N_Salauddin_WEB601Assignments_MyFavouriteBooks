@@ -1,0 +1,31 @@
+<div class="modify-content">
+    <h2>Add Content</h2>
+    <!-- <form (ngSubmit)="addContent()"> -->
+        <form>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="newContent.title" name="title" />
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="newContent.description" name="description" />
+        </div>
+        <div class="form-group">
+            <label for="creator">Creator:</label>
+            <input type="text" class="form-control" id="creator" [(ngModel)]="newContent.creator" name="creator" />
+        </div>
+        <div class="form-group">
+            <label for="image">Image URL:</label>
+            <input type="text" class="form-control" id="image" [(ngModel)]="newContent.image" name="image" />
+        </div>
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <input type="text" class="form-control" id="type" [(ngModel)]="newContent.type" name="type" />
+        </div>
+        <div class="form-group">
+            <label for="tags">Tags:</label>
+            <input type="text" class="form-control" id="tags" [(ngModel)]="newContent.tags" name="tags" />
+        </div>
+        <button class="btn btn-primary" type="submit" (click)= "addContent()">Add Content</button>
+    </form>
+</div>
