@@ -101,11 +101,7 @@ h1 {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-// Additional global styles
-body {
-    margin: auto;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+
 
 h1 {
     color: mat-color($my-primary, 700);
@@ -132,7 +128,7 @@ h1 {
     color: mat-color($my-warn);
 }
 
-.custom-background {
+html {
     background-color: mat-color($my-primary, 50);
 }
 
@@ -148,4 +144,27 @@ h1 {
 
 .mat-button:hover {
     background-color: mat-color($my-accent, hover);
+}
+
+.message-container {
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    margin: auto;
+}
+
+.message{
+    background-color: mat-color($my-primary);
+}
+
+.centered-form-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.centered-form-field mat-form-field {
+    max-width: 500px;
+    width: 100%;
 }

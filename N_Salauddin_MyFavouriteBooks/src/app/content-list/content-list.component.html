@@ -11,7 +11,7 @@
 <app-content-card *ngFor="let item of contentItems | filterContent:'SoftBound'" [item]="item">
 </app-content-card> -->
 
-<app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
+<!-- <app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
 <mat-form-field>
     <input matInput type="text" placeholder="Search Title..." name="search" [(ngModel)]="searchText">
 </mat-form-field>
@@ -29,6 +29,55 @@
 <h2 class="mat-h2">Content with type: SoftBound</h2>
 <div class="content-card-container">
     <app-content-card *ngFor="let item of contentItems | filterContent:'SoftBound'" [item]="item"></app-content-card>
+</div> -->
+
+
+<app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
+<div class="centered-form-field">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Search Title..." name="search" [(ngModel)]="searchText">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSearch()">Search</button>    
 </div>
+
+<p [ngClass]="{'error': !message.includes('Content with this title exists'), 'success': message.endsWith('exists')}"
+    class="mat-body-1">{{message}}</p>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Content with no type
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="content-card-container">
+            <app-content-card *ngFor="let item of contentItems | filterContent:''" [item]="item"></app-content-card>
+        </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Content with type: HardBound
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="content-card-container">
+            <app-content-card *ngFor="let item of contentItems | filterContent:'HardBound'" [item]="item">
+            </app-content-card>
+        </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Content with type: SoftBound
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="content-card-container">
+            <app-content-card *ngFor="let item of contentItems | filterContent:'SoftBound'" [item]="item">
+            </app-content-card>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+
+
+
 
   

@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { BookService } from '../services/book.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ContentDialogComponent } from '../content-dialog/content-dialog.component';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-modify-content',
@@ -20,7 +23,8 @@ export class ModifyContentComponent {
     id: null
   }
 
-  constructor(private bookService: BookService) {}
+
+  constructor(private bookService: BookService, private dialog: MatDialog,private messagesService: MessageService) {}
 
   addContent(): void {
     console.log('addContent() called emit');
@@ -41,6 +45,26 @@ export class ModifyContentComponent {
         };
 
       });
-      
     }
+    
+  openDialog(): void {
+    const dialogRef: MatDialogRef<ContentDialogComponent> = this.dialog.open(ContentDialogComponent, {
+      width: '500px',
+      data: { title: 'Add Book' } 
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.bookService.addContent(result).subscribe(() => {
+          this.messagesService.add(`Content added: ${result.title}`);
+
+        });
+      }
+      dialogRef.componentInstance.contentAdded.subscribe((content: Content) => {
+        console.log(`Content added: ${content.title}`);
+        this.contentAdded.emit(content);
+      });
+    });
   }
+  
+}
