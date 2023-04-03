@@ -1,4 +1,4 @@
-<div [ngClass]="{ 'type1-style': item.type === 'HardBound', 'type2-style': item.type === 'SoftBound' }"  class="content-card" [style.border]="item.type ? '2px solid ' + item.type : '1px solid black'">
+<!-- <div [ngClass]="{ 'type1-style': item.type === 'HardBound', 'type2-style': item.type === 'SoftBound' }"  class="content-card" [style.border]="item.type ? '2px solid ' + item.type : '1px solid black'">
     <div [ngSwitch]='!!item.image' class="content-card-image content-card-item">
         <img *ngSwitchCase='true' src="{{item.image}}" (click)="log()"  alt="{{item.title}}"/>
         <img  *ngSwitchDefault class="content-card-image-default" src="../../assets/images/defaultbooks.jpeg" (click)="log()"  alt="Default Image"/>
@@ -10,4 +10,40 @@
         <p appHoverAffect [hoverStyle]="'underline'" *ngIf="item.type" class="content-card-item">Type: {{item.type}}</p>
         <p appHoverAffect [hoverStyle]="'bold'" class="content-card-item">Tags: {{item.tags}}</p>
     </div>
-</div>
+</div> -->
+
+<!-- <div [ngClass]="{'type1-style': item.type === 'HardBound', 'type2-style': item.type === 'SoftBound'}"
+    class="mat-card content-card" [style.border]="item.type ? '2px solid ' + item.type : '1px solid black'">
+    <div [ngSwitch]="!!item.image" class="mat-card-image content-card-item">
+        <img *ngSwitchCase="true" [src]="item.image" (click)="log()" alt="{{item.title}}" />
+        <img *ngSwitchDefault class="mat-card-image-default" src="../../assets/images/defaultbooks.jpeg" (click)="log()"
+            alt="Default Image" />
+    </div>
+    <div>
+        <h2 class="mat-card-title content-card-item">{{item.title}}</h2>
+        <p class="mat-card-subtitle content-card-item">{{item.description}}</p>
+        <p class="content-card-item mat-card-content">Creator: {{item.creator}}</p>
+        <p appHoverAffect [hoverStyle]="'underline'" *ngIf="item.type" class="content-card-item mat-card-content">Type: {{item.type}}</p>
+        <p appHoverAffect [hoverStyle]="'bold'" class="content-card-item mat-card-content">Tags: {{item.tags}}</p>
+    </div>
+</div> -->
+
+<mat-card [ngClass]="{'type1-style': item.type === 'HardBound', 'type2-style': item.type === 'SoftBound'}"
+    class="content-card">
+    <mat-card-header>
+        <mat-card-title>{{item.title}}</mat-card-title>
+    </mat-card-header>
+    <div [ngSwitch]="!!item.image" class="content-card-image content-card-item">
+        <img *ngSwitchCase="true" [src]="item.image" (click)="log()" alt="{{item.title}}" />
+        <img *ngSwitchDefault class="content-card-image-default" src="../../assets/images/defaultbooks.jpeg"
+            (click)="log()" alt="Default Image" />
+    </div>
+    <mat-card-content>
+        <p>{{item.description}}</p>
+        <p>Creator: {{item.creator}}</p>
+        <p appHoverAffect [hoverStyle]="'underline'" *ngIf="item.type">Type: {{item.type}}</p>
+        <p appHoverAffect [hoverStyle]="'bold'">Tags: {{item.tags}}</p>
+    </mat-card-content>
+</mat-card>
+  
+

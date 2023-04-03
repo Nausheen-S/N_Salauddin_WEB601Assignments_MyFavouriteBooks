@@ -1,4 +1,4 @@
-<app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
+<!-- <app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
 <input type="text" placeholder="Search Title..." name="search" [(ngModel)]="searchText">
 <button (click)="onSearch()">Search</button>
 <p [ngClass]="{'error': !message.includes('Content with this title exists'), 'success': message.endsWith('exists')}">{{message}}</p>
@@ -9,4 +9,26 @@
 </app-content-card>
 <h2>Content with type: SoftBound</h2>
 <app-content-card *ngFor="let item of contentItems | filterContent:'SoftBound'" [item]="item">
-</app-content-card>
+</app-content-card> -->
+
+<app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
+<mat-form-field>
+    <input matInput type="text" placeholder="Search Title..." name="search" [(ngModel)]="searchText">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+<p [ngClass]="{'error': !message.includes('Content with this title exists'), 'success': message.endsWith('exists')}"
+    class="mat-body-1">{{message}}</p>
+<h2 class="mat-h2">Content with no type</h2>
+<div class="content-card-container">
+    <app-content-card *ngFor="let item of contentItems | filterContent:''" [item]="item"></app-content-card>
+</div>
+<h2 class="mat-h2">Content with type: HardBound</h2>
+<div class="content-card-container">
+    <app-content-card *ngFor="let item of contentItems | filterContent:'HardBound'" [item]="item"></app-content-card>
+</div>
+<h2 class="mat-h2">Content with type: SoftBound</h2>
+<div class="content-card-container">
+    <app-content-card *ngFor="let item of contentItems | filterContent:'SoftBound'" [item]="item"></app-content-card>
+</div>
+
+  
