@@ -42,8 +42,11 @@
         <p>{{item.description}}</p>
         <p>Creator: {{item.creator}}</p>
         <p appHoverAffect [hoverStyle]="'underline'" *ngIf="item.type">Type: {{item.type}}</p>
-        <p appHoverAffect [hoverStyle]="'bold'">Tags: {{item.tags}}</p>
+        <!-- <p appHoverAffect [hoverStyle]="'bold'">Tags: {{item.tags}}</p> -->
+        <mat-chip-listbox>
+            <mat-chip appHoverAffect [hoverStyle]="'bold'" *ngFor="let tag of item.tags">{{tag}}</mat-chip>
+        </mat-chip-listbox>
     </mat-card-content>
 </mat-card>
-  
+
 

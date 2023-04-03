@@ -1,0 +1,40 @@
+.modify-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+
+    form {
+        display: flex;
+        flex-direction: column;
+    
+        .form-group {
+            margin-bottom: 10px;
+            width: 100%;
+    
+            mat-form-field {
+            width: 100%;
+    
+            input {
+                width: 100%;
+            }
+            }
+        }
+    
+        button[type="submit"] {
+            margin-top: 10px;
+        }
+    }
+}
+
+.newcontent {
+    width: 80%;
+    margin: 1em auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.newbutton {
+    display: block;
+    margin: auto;
+}

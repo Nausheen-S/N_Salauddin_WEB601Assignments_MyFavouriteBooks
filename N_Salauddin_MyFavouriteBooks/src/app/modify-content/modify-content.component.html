@@ -1,6 +1,5 @@
-<div class="modify-content">
+<!-- <div class="modify-content">
     <h2>Add Content</h2>
-    <!-- <form (ngSubmit)="addContent()"> -->
         <form>
         <div class="form-group">
             <label for="title">Title:</label>
@@ -27,5 +26,56 @@
             <input type="text" class="form-control" id="tags" [(ngModel)]="newContent.tags" name="tags" />
         </div>
         <button class="btn btn-primary" type="submit" (click)= "addContent()">Add Content</button>
+        <button mat-raised-button color="primary" (click)="openDialog()">Add New Content</button>
+    </form>
+</div> -->
+
+<div class="modify-content">
+    <h1 class="mat-h1">Add Content</h1>
+    <form>
+        <div class="form-group">
+            <label>Title:</label>
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="newContent.title" name="title" />
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="newContent.description" name="description" />
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <label>Creator:</label>
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="newContent.creator" name="creator" />
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <label>Image URL:</label>
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="newContent.image" name="image" />
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <label>Type:</label>
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="newContent.type" name="type" />
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <label>Tags:</label>
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="newContent.tags" name="tags" />
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" type="submit" (click)="addContent()">Add Content</button>
     </form>
 </div>
+<div class="newcontent">
+    <h1 class="mat-h1">Adding Content with Dialog</h1>
+    <button mat-raised-button color="primary" (click)="openDialog()" class="newbutton">Add New Content</button>
+</div>
+
+
+

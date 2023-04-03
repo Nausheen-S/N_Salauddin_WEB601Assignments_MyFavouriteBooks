@@ -22,6 +22,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ContentDialogComponent } from './content-dialog/content-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { MatChipsModule } from '@angular/material/chips';
     FilterContentPipe,
     HoverAffectDirective,
     AppMessagesComponent,
-    ModifyContentComponent
+    ModifyContentComponent,
+    ContentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatListModule,
     MatChipsModule,
     MatSnackBarModule,
-    
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

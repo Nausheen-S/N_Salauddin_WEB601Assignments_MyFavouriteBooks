@@ -1,3 +1,6 @@
 <!-- <div *ngFor="let message of messagesService.messages">{{message}}</div> -->
-<div *ngFor="let message of messagesService.messages"  [ngClass]="{'mat-custom-warn': message.startsWith('Invalid')}">{{message}}</div>
+<div class=" message-container">
+    <div *ngFor="let message of messagesService.messages" class="mat-body-1 message" [ngClass]="{'mat-custom-warn': message.startsWith('Invalid')}">{{message}}</div>
+
+</div>
 
