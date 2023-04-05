@@ -1,36 +1,5 @@
-<!-- <div class="modify-content">
-    <h2>Add Content</h2>
-        <form>
-        <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title" [(ngModel)]="newContent.title" name="title" />
-        </div>
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <input type="text" class="form-control" id="description" [(ngModel)]="newContent.description" name="description" />
-        </div>
-        <div class="form-group">
-            <label for="creator">Creator:</label>
-            <input type="text" class="form-control" id="creator" [(ngModel)]="newContent.creator" name="creator" />
-        </div>
-        <div class="form-group">
-            <label for="image">Image URL:</label>
-            <input type="text" class="form-control" id="image" [(ngModel)]="newContent.image" name="image" />
-        </div>
-        <div class="form-group">
-            <label for="type">Type:</label>
-            <input type="text" class="form-control" id="type" [(ngModel)]="newContent.type" name="type" />
-        </div>
-        <div class="form-group">
-            <label for="tags">Tags:</label>
-            <input type="text" class="form-control" id="tags" [(ngModel)]="newContent.tags" name="tags" />
-        </div>
-        <button class="btn btn-primary" type="submit" (click)= "addContent()">Add Content</button>
-        <button mat-raised-button color="primary" (click)="openDialog()">Add New Content</button>
-    </form>
-</div> -->
 
-<div class="modify-content">
+<!-- <div class="modify-content">
     <h1 class="mat-h1">Add Content</h1>
     <form>
         <div class="form-group">
@@ -75,7 +44,59 @@
 <div class="newcontent">
     <h1 class="mat-h1">Adding Content with Dialog</h1>
     <button mat-raised-button color="primary" (click)="openDialog()" class="newbutton">Add New Content</button>
-</div>
+</div> -->
 
 
 
+<mat-tab-group>
+    <mat-tab label="Add Content">
+        <div class="modify-content">
+            <h1 class="mat-h1">Add Content</h1>
+            <form>
+                <div class="form-group">
+                    <label>Title:</label>
+                    <mat-form-field>
+                        <input matInput type="text" [(ngModel)]="newContent.title" name="title" />
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <label>Description:</label>
+                    <mat-form-field>
+                        <input matInput type="text" [(ngModel)]="newContent.description" name="description" />
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <label>Creator:</label>
+                    <mat-form-field>
+                        <input matInput type="text" [(ngModel)]="newContent.creator" name="creator" />
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <label>Image URL:</label>
+                    <mat-form-field>
+                        <input matInput type="text" [(ngModel)]="newContent.image" name="image" />
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <label>Type:</label>
+                    <mat-form-field>
+                        <input matInput type="text" [(ngModel)]="newContent.type" name="type" />
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <label>Tags:</label>
+                    <mat-form-field>
+                        <input matInput type="text" [(ngModel)]="newContent.tags" name="tags" />
+                    </mat-form-field>
+                </div>
+                <button mat-raised-button color="primary" type="submit" (click)="addContent()">Add Content</button>
+            </form>
+        </div>
+    </mat-tab>
+    <mat-tab label="Adding Content with Dialog">
+        <div class="newcontent">
+            <h1 class="mat-h1">Adding Content with Dialog</h1>
+            <button mat-raised-button color="primary" (click)="openDialog()" class="newbutton">Add New Content</button>
+        </div>
+    </mat-tab>
+</mat-tab-group>

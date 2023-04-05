@@ -17,17 +17,8 @@
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Tag" [(ngModel)]="newContent.tags">
-        <!-- <mat-chip-listbox #chipList>
-            <mat-chip *ngFor="let tag of newContent.tags" [selectable]="true" [removable]="true"
-                (removed)="removeTag(tag)">
-                {{tag}}
-                <mat-icon matChipRemove>cancel</mat-icon>
-            </mat-chip>
-            <input matInput placeholder="Tags" [matChipInputFor]="chipList"
-                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="true"
-                (matChipInputTokenEnd)="addTag($event)">
-        </mat-chip-listbox> -->
     </mat-form-field>
+    
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="cancel()">Cancel</button>

@@ -5,5 +5,5 @@ export interface Content {
     creator: string;
     image?: string;
     type?: string;
-    tags?: string[];
+    tags?: string[] ;
 }
