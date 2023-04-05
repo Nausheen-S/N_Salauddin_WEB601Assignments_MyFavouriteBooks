@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject ,Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Inject ,Output, EventEmitter, Optional, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Content } from '../helper-files/content-interface';
+
 
 export interface DialogData {
   title: string;
@@ -9,13 +10,14 @@ export interface DialogData {
 @Component({
   selector: 'app-content-dialog',
   templateUrl: './content-dialog.component.html',
-  styleUrls: ['./content-dialog.component.scss']
+  styleUrls: ['./content-dialog.component.scss'],
 })
 export class ContentDialogComponent implements OnInit {
+
   @Output() contentAdded = new EventEmitter<Content>();
 
- 
-  
+
+
   newContent: Content = {
     id: null,
     title: '',
@@ -40,8 +42,14 @@ export class ContentDialogComponent implements OnInit {
   }
 
   add(): void {
-    this.contentAdded.emit(this.newContent);
     this.dialogRef.close(this.newContent);
   }
 
+  
 }
+  
+
+
+  
+
+

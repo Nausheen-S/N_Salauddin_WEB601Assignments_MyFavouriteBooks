@@ -19,7 +19,7 @@ export class ModifyContentComponent {
     creator: '',
     image: '',
     type: '',
-    tags: [],
+    tags: [] ,
     id: null
   }
 
@@ -27,6 +27,7 @@ export class ModifyContentComponent {
   constructor(private bookService: BookService, private dialog: MatDialog,private messagesService: MessageService) {}
 
   addContent(): void {
+    
     console.log('addContent() called emit');
 
     this.bookService
@@ -55,10 +56,13 @@ export class ModifyContentComponent {
   
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.bookService.addContent(result).subscribe(() => {
-          this.messagesService.add(`Content added: ${result.title}`);
-
-        });
+        // this.bookService.addContent(result).subscribe(() => {
+        //   this.messagesService.add(`Content added: ${result.title}`);
+        //   this.contentAdded.emit(result);
+        // });
+        this.messagesService.add(`Content added: ${result.title}`);
+        this.contentAdded.emit(result);
+        this.bookService.addContent(result).subscribe();
       }
       dialogRef.componentInstance.contentAdded.subscribe((content: Content) => {
         console.log(`Content added: ${content.title}`);

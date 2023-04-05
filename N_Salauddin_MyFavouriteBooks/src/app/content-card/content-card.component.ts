@@ -10,10 +10,15 @@ import {Content} from '../helper-files/content-interface';
 export class ContentCardComponent  {
   @Input()item;
   @Input() boxShadow!: boolean;
-
+  @Input()
+  content!: Content;
   isFirst: boolean = false;
   isLast: boolean = false;
-  
+  tags: string[] | undefined;
+
+  ngOnInit(): void {
+    this.tags = this.content.tags || [];
+  }
 
   @Input()contentItems!: Content;
 
