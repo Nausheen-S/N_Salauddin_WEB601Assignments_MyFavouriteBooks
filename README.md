@@ -4,5 +4,5 @@
 
 ## Theme : My Favourite Books
 
-## Link to StackBlitz : [StackBlitz](https://stackblitz.com/github/NausheenSalauddin/N_Salauddin_WEB601Assignments_MyFavouriteBooks/tree/Assignment-7/N_Salauddin_MyFavouriteBooks?file=README.md)
+## Link to StackBlitz : [StackBlitz](https://stackblitz.com/edit/github-ti9cqu?file=src%2Fstyles.scss,README.md)
  
