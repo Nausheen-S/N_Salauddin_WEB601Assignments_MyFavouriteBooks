@@ -26,6 +26,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ContentDialogComponent } from './content-dialog/content-dialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     HoverAffectDirective,
     AppMessagesComponent,
     ModifyContentComponent,
-    ContentDialogComponent
+    ContentDialogComponent,
+    ContentDetailComponent
   ],
   imports: [
     BrowserModule,
