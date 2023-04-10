@@ -38,7 +38,7 @@
         <img *ngSwitchDefault class="content-card-image-default" src="../../assets/images/defaultbooks.jpeg"
             (click)="log()" alt="Default Image" />
     </div>
-    <a [routerLink]="['/content', item.id]">View Details</a>
+    <a class="router-link" [routerLink]="['/content', item.id]">View Details</a>
 
     <!-- <mat-card-content>
         <p>{{item.description}}</p>

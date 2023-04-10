@@ -8,16 +8,34 @@
 <app-content-card [item]="topContent" *ngIf="topContent" class="top-card" style="box-shadow: 2px 2px 10px grey;"></app-content-card>
 <app-content-list></app-content-list> -->
 
-<h1 class="mat-display-2">My Favourite Books</h1>
+
+
+<!-- <h1 class="mat-display-2">My Favourite Books</h1>
 <router-outlet></router-outlet>
 <div class="centered-form-field">
     <mat-form-field>
         <mat-label>Enter ID:</mat-label>
         <input matInput type="number" id="idInput" [(ngModel)]="id">
     </mat-form-field>
-    <!-- <button mat-raised-button (click)="addContentCard(id)">Add Content Card</button> -->
     <button mat-raised-button color="primary" (click)="showContentById()">Show Content</button>
 </div>
 <app-app-messages></app-app-messages>
  <!-- <app-content-card [item]="topContent" *ngIf="topContent" class="top-card" mat-elevation-z3></app-content-card> -->
-<!-- <app-content-list></app-content-list> -->
+<!-- <app-content-list></app-content-list> --> 
+
+<h1 class="mat-display-2">My Favourite Books</h1>
+<nav>
+    <mat-toolbar color="primary">
+        <a mat-button routerLink="/list" routerLinkActive="active">Content List</a>
+        <a mat-button routerLink="/invalid-link" routerLinkActive="active">Invalid Link</a>
+    </mat-toolbar>
+</nav>
+<router-outlet></router-outlet>
+<div class="centered-form-field">
+    <mat-form-field>
+        <mat-label>Enter ID:</mat-label>
+        <input matInput type="number" id="idInput" [(ngModel)]="id">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="showContentById()">Show Content</button>
+</div>
+<app-app-messages></app-app-messages>
