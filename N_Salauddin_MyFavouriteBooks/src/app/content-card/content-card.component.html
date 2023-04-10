@@ -27,8 +27,8 @@
         <p appHoverAffect [hoverStyle]="'bold'" class="content-card-item mat-card-content">Tags: {{item.tags}}</p>
     </div>
 </div> -->
-
-<mat-card [ngClass]="{'type1-style': item.type === 'HardBound', 'type2-style': item.type === 'SoftBound'}"
+<ng-container *ngIf="item">
+    <mat-card [ngClass]="{'type1-style': item.type === 'HardBound', 'type2-style': item.type === 'SoftBound'}"
     class="content-card">
     <mat-card-header>
         <mat-card-title>{{item.title}}</mat-card-title>
@@ -38,15 +38,17 @@
         <img *ngSwitchDefault class="content-card-image-default" src="../../assets/images/defaultbooks.jpeg"
             (click)="log()" alt="Default Image" />
     </div>
-    <mat-card-content>
+    <a [routerLink]="['/content', item.id]">View Details</a>
+
+    <!-- <mat-card-content>
         <p>{{item.description}}</p>
         <p>Creator: {{item.creator}}</p>
         <p appHoverAffect [hoverStyle]="'underline'" *ngIf="item.type">Type: {{item.type}}</p>
         <p appHoverAffect [hoverStyle]="'bold'">Tags: {{item.tags}}</p>
-        <!-- <mat-chip-listbox>
-            <mat-chip appHoverAffect [hoverStyle]="'bold'" *ngFor="let tag of item.tags">{{tag}}</mat-chip>
-        </mat-chip-listbox>           -->
-    </mat-card-content>
+        <a [routerLink]="['/content', item.id]">View Details</a>
+    </mat-card-content> -->
 </mat-card>
+</ng-container>
+
 
 

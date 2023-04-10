@@ -9,6 +9,7 @@
 <app-content-list></app-content-list> -->
 
 <h1 class="mat-display-2">My Favourite Books</h1>
+<router-outlet></router-outlet>
 <div class="centered-form-field">
     <mat-form-field>
         <mat-label>Enter ID:</mat-label>
@@ -18,5 +19,5 @@
     <button mat-raised-button color="primary" (click)="showContentById()">Show Content</button>
 </div>
 <app-app-messages></app-app-messages>
-<app-content-card [item]="topContent" *ngIf="topContent" class="top-card" mat-elevation-z3></app-content-card>
-<app-content-list></app-content-list>
+ <!-- <app-content-card [item]="topContent" *ngIf="topContent" class="top-card" mat-elevation-z3></app-content-card> -->
+<!-- <app-content-list></app-content-list> -->

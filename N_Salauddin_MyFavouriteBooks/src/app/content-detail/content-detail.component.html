@@ -1,1 +1,15 @@
-<p>content-detail works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ (content$ | async)?.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{ (content$ | async)?.description }}</p>
+        <p>Creator: {{ (content$ | async)?.creator }}</p>
+        <p appHoverAffect [hoverStyle]="'underline'" *ngIf="(content$ | async)?.type">Type: {{ (content$ | async)?.type }}</p>
+        <p appHoverAffect [hoverStyle]="'bold'">Tags: {{ (content$ | async)?.tags }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goBack()">Back to content list</button>
+    </mat-card-actions>
+</mat-card>
+
