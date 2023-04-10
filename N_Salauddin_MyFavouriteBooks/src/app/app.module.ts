@@ -27,6 +27,7 @@ import { ContentDialogComponent } from './content-dialog/content-dialog.componen
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
     MatSnackBarModule,
     MatExpansionModule,
     MatBadgeModule,
-    MatTabsModule
+    MatTabsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
